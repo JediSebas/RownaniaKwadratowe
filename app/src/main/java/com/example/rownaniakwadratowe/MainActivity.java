@@ -32,13 +32,25 @@ public class MainActivity extends AppCompatActivity {
         double a = Double.parseDouble(as);
         double b = Double.parseDouble(bs);
         double c = Double.parseDouble(cs);
-        double x1, x2;
-        double delta = sqrt(pow(b, 2) - 4 * a * c);
-        x1 = (-b + delta) / (2 * a);
-        x2 = (-b - delta) / (2 * a);
-        String wyn1 = String.valueOf(x1);
-        String wyn2 = String.valueOf(x2);
-        wynik1et.setText(wyn1);
-        wynik2et.setText(wyn2);
+        double x1, x2, x;
+        double delta = pow(b, 2) - 4 * a * c;
+        if(delta > 0 ) {
+            x1 = (-b + sqrt(delta)) / (2 * a);
+            x2 = (-b - sqrt(delta)) / (2 * a);
+            String wyn1 = String.valueOf(x1);
+            String wyn2 = String.valueOf(x2);
+            wynik1et.setText(wyn1);
+            wynik2et.setText(wyn2);
+        }
+        else if (delta == 0){
+            x = (-b)/(2*a);
+            String wyn1 = String.valueOf(x);
+            wynik1et.setText(wyn1);
+            wynik2et.setText("Brak");
+        }
+        else if (delta < 0){
+            wynik1et.setText("Liczba nierzeczywista");
+            wynik2et.setText("Liczba nierzeczywista");
+        }
     }
 }
