@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
         paramCet = (EditText) findViewById(R.id.paramCet);
         wynik1et = (EditText) findViewById(R.id.wynik1et);
         wynik2et = (EditText) findViewById(R.id.wynik2et);
+        paramAet.setText("0");
+        paramBet.setText("0");
+        paramCet.setText("0");
     }
 
     public void click(View view) {
@@ -32,25 +35,88 @@ public class MainActivity extends AppCompatActivity {
         double a = Double.parseDouble(as);
         double b = Double.parseDouble(bs);
         double c = Double.parseDouble(cs);
-        double x1, x2, x;
+        double x1, x2;
         double delta = pow(b, 2) - 4 * a * c;
-        if(delta > 0 ) {
-            x1 = (-b + sqrt(delta)) / (2 * a);
-            x2 = (-b - sqrt(delta)) / (2 * a);
-            String wyn1 = String.valueOf(x1);
+        if(a != 0 && b != 0 && c != 0) {
+            if (delta > 0) {
+                x1 = (-b + sqrt(delta)) / (2 * a);
+                x2 = (-b - sqrt(delta)) / (2 * a);
+                x1 *= 100;
+                x2 *= 100;
+                x1 = Math.round(x1);
+                x2 = Math.round(x2);
+                x1 /= 100;
+                x2 /= 100;
+                String wyn1 = String.valueOf(x1);
+                String wyn2 = String.valueOf(x2);
+                wynik1et.setText(wyn1);
+                wynik2et.setText(wyn2);
+            } else if (delta == 0) {
+                x1 = (-b) / (2 * a);
+                x1 *= 100;
+                x1 = Math.round(x1);
+                x1 /= 100;
+                String wyn1 = String.valueOf(x1);
+                wynik1et.setText(wyn1);
+                wynik2et.setText("Brak");
+            } else if (delta < 0) {
+                wynik1et.setText("Liczba nierzeczywista");
+                wynik2et.setText("Liczba nierzeczywista");
+            }
+        }
+        else if (b == 0 && a != 0 && c != 0){
+            if ((c < 0 || a < 0) && !(c < 0 && a < 0)) {
+                x1 = sqrt(-(c / a));
+                x2 = -(sqrt(-(c / a)));
+                x1 *= 100;
+                x2 *= 100;
+                x1 = Math.round(x1);
+                x2 = Math.round(x2);
+                x1 /= 100;
+                x2 /= 100;
+                String wyn1 = String.valueOf(x1);
+                String wyn2 = String.valueOf(x2);
+                wynik1et.setText(wyn1);
+                wynik2et.setText(wyn2);
+            }
+            else if ((c < 0 && a < 0) || (c > 0 && a > 0)){
+                wynik1et.setText("Licba nierzeczywista");
+                wynik2et.setText("Licba nierzeczywista");
+            }
+        }
+        else if (c == 0 && a!= 0 && b != 0){
+            x2 = -b/a;
+            x2 *= 100;
+            x2 = Math.round(x2);
+            x2 /= 100;
             String wyn2 = String.valueOf(x2);
-            wynik1et.setText(wyn1);
+            wynik1et.setText("0");
             wynik2et.setText(wyn2);
         }
-        else if (delta == 0){
-            x = (-b)/(2*a);
-            String wyn1 = String.valueOf(x);
-            wynik1et.setText(wyn1);
+        else if (a == 0 && b == 0 && c == 0){
+            wynik1et.setText("0");
+            wynik2et.setText("0");
+        }
+        else if(a == 0 && c == 0 && b != 0){
+            wynik1et.setText("0");
+            wynik2et.setText("0");
+        }
+        else if(a != 0 && b == 0 && c == 0){
+            wynik1et.setText("0");
+            wynik2et.setText("0");
+        }
+        else if(a == 0 && b == 0 && c != 0){
+            wynik1et.setText("Brak");
             wynik2et.setText("Brak");
         }
-        else if (delta < 0){
-            wynik1et.setText("Liczba nierzeczywista");
-            wynik2et.setText("Liczba nierzeczywista");
+        else if(a == 0 && b != 0 && c != 0){
+            x1 = -(c/b);
+            x1 *= 100;
+            x1 = Math.round(x1);
+            x1 /= 100;
+            String wyn1 = String.valueOf(x1);
+            wynik1et.setText(wyn1);
+            wynik2et.setText("Brak");
         }
     }
 }
