@@ -5,6 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import static java.lang.Math.sqrt;
 import static java.lang.Math.pow;
 
@@ -12,8 +16,8 @@ public class MainActivity extends AppCompatActivity {
     EditText paramAet;
     EditText paramBet;
     EditText paramCet;
-    EditText wynik1et;
-    EditText wynik2et;
+    TextView wynik1et;
+    TextView wynik2et;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,8 +25,18 @@ public class MainActivity extends AppCompatActivity {
         paramAet = (EditText) findViewById(R.id.paramAet);
         paramBet = (EditText) findViewById(R.id.paramBet);
         paramCet = (EditText) findViewById(R.id.paramCet);
-        wynik1et = (EditText) findViewById(R.id.wynik1et);
-        wynik2et = (EditText) findViewById(R.id.wynik2et);
+        wynik1et = (TextView) findViewById(R.id.wynik1et);
+        wynik2et = (TextView) findViewById(R.id.wynik2et);
+        getSupportActionBar().setTitle("Równania kwadratowe");
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                paramAet.setText("");
+                paramBet.setText("");
+                paramCet.setText("");
+            }
+        });
     }
 
     public void click(View view) {

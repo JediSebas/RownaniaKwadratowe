@@ -13,6 +13,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:text="a"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,8 +23,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="48dp"
         android:text="b"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paramA" />
 
@@ -31,8 +35,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="46dp"
         android:text="c"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paramB" />
 
@@ -41,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="162dp"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="162dp"
         android:onClick="click"
         android:text="oblicz"
@@ -50,42 +56,18 @@
         app:layout_constraintTop_toBottomOf="@+id/paramCet" />
 
     <TextView
-        android:id="@+id/wynik1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="80dp"
-        android:text="x1"
-        app:layout_constraintBottom_toTopOf="@+id/wynik2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <EditText
         android:id="@+id/wynik1et"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="125dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="78dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/wynik2et"
+        android:layout_marginStart="198dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="198dp"
+        android:text="x1"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <EditText
-        android:id="@+id/wynik2et"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="80dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wynik1et" />
 
     <EditText
         android:id="@+id/paramAet"
@@ -121,15 +103,28 @@
         app:layout_constraintTop_toBottomOf="@+id/paramBet" />
 
     <TextView
-        android:id="@+id/wynik2"
+        android:id="@+id/wynik2et"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginStart="193dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="193dp"
         android:text="x2"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wynik1" />
+        app:layout_constraintTop_toBottomOf="@+id/wynik1et" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_delete" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
