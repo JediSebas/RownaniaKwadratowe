@@ -81,8 +81,8 @@ public class MainActivity extends AppCompatActivity {
                     wynik1et.setText(wyn1);
                     wynik2et.setText("Brak");
                 } else if (delta < 0) {
-                    double cz1 = -b / 2*a;
-                    double cz2 = sqrt(-delta)/ 2*a;
+                    double cz1 = -b / (2*a);
+                    double cz2 = sqrt(-delta)/ (2*a);
                     cz1 = zaokrl(cz1);
                     cz2 = zaokrl(cz2);
                     String cz1s = String.valueOf(cz1);
