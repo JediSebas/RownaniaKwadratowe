@@ -1,4 +1,4 @@
-# RownaniaKwadratowe
+# Równania Kwadratowe
 Aplikacja licząca równania kwadratowe.
 
 Oprócz standardowych rozwiązań, gdy delta nie jest ujemna, otrzymujemy również wynik w postaci liczby zespolonej.
